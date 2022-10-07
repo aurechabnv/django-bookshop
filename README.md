@@ -1,2 +1,2 @@
-# training-bookshop-website
+# django-bookshop
 Bookshop website for @DocstringFr training project.
