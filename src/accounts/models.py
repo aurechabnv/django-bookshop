@@ -1,7 +1,7 @@
 from datetime import datetime
 
 from django.db import models
-from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
+from django.contrib.auth.base_user import AbstractBaseUser, BaseUserManager
 
 
 class CustomUserManager(BaseUserManager):
@@ -41,6 +41,7 @@ class CustomUser(AbstractBaseUser):
     is_admin = models.BooleanField(default=False)
 
     USERNAME_FIELD = 'email'
+    objects = CustomUserManager()
 
     def has_perm(self, perm, obj=None):
         return True
